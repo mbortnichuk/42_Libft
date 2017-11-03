@@ -6,7 +6,7 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/31 12:14:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/03 12:40:05 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/03 15:40:18 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	long long i;
-	long long res;
-	int neg;
+	long long	i;
+	long long	res;
+	int			neg;
 
 	i = 0;
 	res = 0;
