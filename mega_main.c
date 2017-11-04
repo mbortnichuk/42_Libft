@@ -16,7 +16,7 @@
 
 /* puts() writes a string to stdout up to but not including the null character */
 
-int		main(void)
+static int		main(void)
 {
 	/*---------- ATOI TEST ----------*/
 	puts("----------------------------------------");
