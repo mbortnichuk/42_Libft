@@ -6,11 +6,17 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/31 12:14:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/03 16:16:51 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/07 15:10:39 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+static int	skip_blanks(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\v' || \
+			c == '\f' || c == '\r' || c == '\n');
+}
 
 int		ft_atoi(const char *str)
 {
@@ -21,19 +27,20 @@ int		ft_atoi(const char *str)
 	i = 0;
 	res = 0;
 	neg = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
-	{
+	while (skip_blanks(str[i]))
 		i++;
-	}
+	if (str[i] == '-')
+		neg = -1;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			neg = -1;
 		i++;
-	}
-	while ((str[i] != '\0') && str[i] >= '0' && str[i] <= '9')
+	while ((str[i] != '\0') && ft_isdigit(str[i]))
 	{
+		if ((res > 922337203685477580 || (res == 922337203685477580 \
+						&& (str[i] - '0') > 7)) && neg == 1)
+			return (-1);
+		else if ((res > 922337203685477580 || (res == 922337203685477580 \
+						&& (str[i] - '0') > 9)) && neg  == -1)
+			return (0);
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
