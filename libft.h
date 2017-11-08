@@ -6,7 +6,7 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 11:47:04 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/01 18:58:13 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:05:49 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+int		ft_wordcount(char const *s, char c);
+int		ft_wordlength(char const *s, char c);
 
 #endif
