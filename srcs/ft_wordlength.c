@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_wordlength.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/04 14:08:44 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/07 17:49:55 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/08 16:02:37 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/08 16:21:12 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_strclr(char *s)
+int 	ft_wordlength(char const *s, char c)
 {
-	int i;
+		int i;
+		int length;
 
-	if (s != NULL)
-	{
 		i = 0;
-		while (s[i] != '\0')
+		length = 0;
+		while (s[i] == c)
 		{
 			i++;
 		}
-		while (i >= 0)
+		while (s[i] != c && s[i] != '\0')
 		{
-			s[i] = '\0';
-			i--;
+			length++;
+			i++;
 		}
-	}
+		return (length);
 }
