@@ -22,8 +22,32 @@ int main()
 //	char *ss2 = "judy";
 //	printf("%s%s\n", "strjoin: ", ft_strjoin(ss1, ss2));
 
-	char *ss3 = " hellow	";
-	printf("%s%s\n", "strtrim: ", ft_strtrim(ss3));
+//	char *ss3 = " hellow	";
+//	printf("%s%s\n", "strtrim: ", ft_strtrim(ss3));
+
+//	char *ss4 = "	 -5";
+//	printf("%s%d\n", "My atoi: ", ft_atoi(ss4));
+//	printf("%s%d\n", "Original atoi: ", atoi(ss4));
+
+//	printf("%s%d\n", "wordcount test: ", ft_wordcount("helo**gerry** rendu*jello", '*'));
+//	printf("%s%d\n", "wordlength test: ", ft_wordlength("hello**gerry", '*'));
+
+//	printf("%s%s\n", "strsplit: ", ft_strsplit2("koko$haha$$gogo", '$'));
+
+//	char s[45] = "      split       this for   me  !       ";
+//	char **r = ft_strsplit(s, ' ');	
+
+//	printf("%s%s\n", "strsplit: ", ft_strsplit());
+
+//	int i;
+//	i = -33;
+//	ft_putnbr(i);
+//	ft_putnbr_fd(i, 1);
+
+	int i = 123456;
+	printf("%s%d\n", "numberslength: ", ft_numberlength(i));
+	printf("%s%s\n", "itoa: ", ft_itoa(i));
+//	printf("%s%s\n", "itoa: ", ft_itoa(i));
 
 	return (0);
 }

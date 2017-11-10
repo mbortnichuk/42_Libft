@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_numberlength.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:02:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/10 12:00:04 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/10 14:50:06 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/10 15:13:58 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_wordlength(char const *s, char c)
+int		ft_numberlength(int n)
 {
-	int i;
-	int length;
+	int				i;
+	unsigned int	nb;
 
 	i = 0;
-	length = 0;
-	while (s[i] == c)
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
 		i++;
+		nb = -n;
 	}
-	while (s[i] != c && s[i] != '\0')
+	else
 	{
-		length++;
+		nb = n;
+	}
+	while (nb != 0)
+	{
+		nb /= 10;
 		i++;
 	}
-	return (length);
+	return (i);
 }

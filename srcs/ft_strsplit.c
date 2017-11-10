@@ -6,20 +6,21 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:23:34 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/09 17:45:31 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/10 15:33:13 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
+
 #include <libft.h>
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int i; /*counter **string arr*/
-	int j; /*counter *s arr*/
-	int w; /*counter for characters int **string*/
-	char **string;
+	int		i;
+	int		j;
+	int		w;
+	char	**string;
 
-	if (!s || !(string = (char**)malloc(sizeof(*string) * ft_wordcount(s, c) + 1)))
+	if (!s || !(string = (char**)malloc(sizeof(*string) *
+					ft_wordcount(s, c) + 1)))
 		return (NULL);
 	j = 0;
 	i = 0;

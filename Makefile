@@ -6,7 +6,7 @@
 #    By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 17:33:05 by mbortnic          #+#    #+#              #
-#    Updated: 2017/11/06 18:40:58 by mbortnic         ###   ########.fr        #
+#    Updated: 2017/11/10 14:56:42 by mbortnic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS = srcs/ft_atoi.c \
 	   srcs/ft_isascii.c \
 	   srcs/ft_isdigit.c \
 	   srcs/ft_isprint.c \
+	   srcs/ft_itoa.c \
 	   srcs/ft_memalloc.c \
 	   srcs/ft_memccpy.c \
 	   srcs/ft_memchr.c \
@@ -27,11 +28,20 @@ SRCS = srcs/ft_atoi.c \
 	   srcs/ft_memdel.c \
 	   srcs/ft_strnew.c \
 	   srcs/ft_strdel.c \
-	   srcs/ft_strclr.c \
 	   srcs/ft_memmove.c \
 	   srcs/ft_memset.c \
+	   srcs/ft_numberlength.c \
+	   srcs/ft_putchar.c \
+	   srcs/ft_putchar_fd.c \
+	   srcs/ft_putendl.c \
+	   srcs/ft_putendl_fd.c \
+	   srcs/ft_putnbr.c \
+	   srcs/ft_putnbr_fd.c \
+	   srcs/ft_putstr.c \
+	   srcs/ft_putstr_fd.c \
 	   srcs/ft_strcat.c \
 	   srcs/ft_strchr.c \
+	   srcs/ft_strclr.c \
 	   srcs/ft_strcmp.c \
 	   srcs/ft_strcpy.c \
 	   srcs/ft_strdup.c \
@@ -49,27 +59,25 @@ SRCS = srcs/ft_atoi.c \
 	   srcs/ft_strnequ.c \
 	   srcs/ft_strnstr.c \
 	   srcs/ft_strrchr.c \
+	   srcs/ft_strsplit.c \
 	   srcs/ft_strstr.c \
 	   srcs/ft_strsub.c \
 	   srcs/ft_strtrim.c \
 	   srcs/ft_tolower.c \
-	   srcs/ft_toupper.c 
+	   srcs/ft_toupper.c \
+	   srcs/ft_wordcount.c \
+	   srcs/ft_wordlength.c
 
 CFLAGS = -Wall -Wextra -Werror -I. -c
 
 HEADER = libft.h
 
-BINS = $(SRCS:.c=.o)
-
 all: $(NAME)
 
 $(NAME): 
-	@ gcc $(CFLAGS) $(SRCS)
+	@ gcc $(SRCS) $(CFLAGS)
 	@ ar rc $(NAME) *.o
 	@ ranlib $(NAME)
-	
-%.o: %.c
-	@ gcc $(CFLAGS) $<
 
 clean:
 	@ rm -f *.o

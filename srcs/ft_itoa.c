@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:02:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/10 12:00:04 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/10 12:42:23 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/10 15:13:18 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_wordlength(char const *s, char c)
+char	*ft_itoa(int n)
 {
-	int i;
-	int length;
+	char			*number;
+	unsigned int	nb;
+	int				length;
 
-	i = 0;
-	length = 0;
-	while (s[i] == c)
+	length = ft_numberlength(n);
+	number = (ft_strnew(length));
+	if (!number)
+		return (0);
+	nb = n;
+	if (n < 0)
 	{
-		i++;
+		number[0] = '-';
+		nb = -n;
 	}
-	while (s[i] != c && s[i] != '\0')
+	if (n == 0)
+		number[0] = '0';
+	number[length--] = '\0';
+	while (nb != 0)
 	{
-		length++;
-		i++;
+		number[length--] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	return (length);
+	return (number);
 }

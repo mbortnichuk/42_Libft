@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:02:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/10 12:00:04 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/09 18:53:31 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/09 18:54:51 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_wordlength(char const *s, char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int i;
-	int length;
-
-	i = 0;
-	length = 0;
-	while (s[i] == c)
-	{
-		i++;
-	}
-	while (s[i] != c && s[i] != '\0')
-	{
-		length++;
-		i++;
-	}
-	return (length);
+	write(fd, &c, 1);
 }

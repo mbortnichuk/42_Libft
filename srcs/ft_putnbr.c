@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordlength.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:02:37 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/10 12:00:04 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/09 19:51:04 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/10 11:54:21 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_wordlength(char const *s, char c)
+void	ft_putnbr(int n)
 {
-	int i;
-	int length;
-
-	i = 0;
-	length = 0;
-	while (s[i] == c)
-	{
-		i++;
-	}
-	while (s[i] != c && s[i] != '\0')
-	{
-		length++;
-		i++;
-	}
-	return (length);
+	ft_putnbr_fd(n, 1);
 }
