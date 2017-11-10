@@ -44,10 +44,26 @@ int main()
 //	ft_putnbr(i);
 //	ft_putnbr_fd(i, 1);
 
-	int i = 123456;
-	printf("%s%d\n", "numberslength: ", ft_numberlength(i));
-	printf("%s%s\n", "itoa: ", ft_itoa(i));
+//	int i = 123456;
+//	printf("%s%d\n", "numberslength: ", ft_numberlength(i));
 //	printf("%s%s\n", "itoa: ", ft_itoa(i));
+//	printf("%s%s\n", "itoa: ", ft_itoa(i));
+
+
+/* list check  */
+
+//	char *s = "hellow";
+//	size_t i = 4;
+//	t_list *list;
+//	list = ft_lstnew(s, i);
+//	printf("%s\n", list->content);
+
+	struct s_list a;
+	struct s_list b;
+	a.content = "hellow";
+	b.content_size = 4;
+
+	printf(ft_lstnew(a.content, b.content_size));
 
 	return (0);
 }
