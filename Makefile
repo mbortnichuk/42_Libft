@@ -6,7 +6,7 @@
 #    By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 17:33:05 by mbortnic          #+#    #+#              #
-#    Updated: 2017/11/10 14:56:42 by mbortnic         ###   ########.fr        #
+#    Updated: 2017/11/11 15:27:11 by mbortnic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ NAME = libft.a
 	   personal_funcs/ft_wordcount.c \
 	   personal_funcs/ft_wordlength.c #
 
-SRCS = libc_funcs/*.c additional_funcs/*.c personal_funcs/*.c
+SRCS = libc_funcs/*.c additional_funcs/*.c personal_funcs/*.c bonus_funcs/*.c
 
 CFLAGS = -Wall -Wextra -Werror -I. -c
 
