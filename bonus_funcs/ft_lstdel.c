@@ -6,7 +6,7 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 15:20:10 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/12 16:36:58 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/13 16:54:39 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list *list;
 	t_list *newlist;
+
+	list = *alst;
 	while (list)
 	{
 		newlist = list->next;
 		del(list->content, list->content_size);
 		free(list);
-		newlist = list;
+		list = newlist;
 	}
-	newlist = list;
+	*alst = NULL;
 }

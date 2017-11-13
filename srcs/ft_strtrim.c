@@ -6,7 +6,7 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 18:05:41 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/06 18:56:27 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/13 19:07:08 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ char		*ft_strtrim(char const *s)
 
 	start = 0;
 	string = NULL;
-	end = (ft_strlen(s) - 1);
 	if (!s)
 		return (NULL);
-	while (blanks(s[start]) == 1)
+	end = (ft_strlen(s)) - 1;
+	while (blanks(s[start]) == 1 && s[start] != '\0')
 		start++;
-	while (blanks(s[end]))
+	while (blanks(s[end]) == 1 && end > 0)
 		end--;
 	end++;
 	if (start >= end)

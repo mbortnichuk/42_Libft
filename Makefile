@@ -6,13 +6,13 @@
 #    By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 17:33:05 by mbortnic          #+#    #+#              #
-#    Updated: 2017/11/11 15:27:11 by mbortnic         ###   ########.fr        #
+#    Updated: 2017/11/13 16:23:28 by mbortnic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-#SRCS = libc_funcs/ft_atoi.c \
+SRCS = libc_funcs/ft_atoi.c \
 	   libc_funcs/ft_bzero.c \
 	   libc_funcs/ft_isalnum.c \
 	   libc_funcs/ft_isalpha.c \
@@ -64,11 +64,15 @@ NAME = libft.a
 	   additional_funcs/ft_strsplit.c \
 	   additional_funcs/ft_strsub.c \
 	   additional_funcs/ft_strtrim.c \
+	   bonus_funcs/ft_lstnew.c \
+	   bonus_funcs/ft_lstdelone.c \
+	   bonus_funcs/ft_lstdel.c \
+	   bonus_funcs/ft_lstadd.c \
+	   bonus_funcs/ft_lstiter.c \
+	   bonus_funcs/ft_lstmap.c \
 	   personal_funcs/ft_numberlength.c \
 	   personal_funcs/ft_wordcount.c \
-	   personal_funcs/ft_wordlength.c #
-
-SRCS = libc_funcs/*.c additional_funcs/*.c personal_funcs/*.c bonus_funcs/*.c
+	   personal_funcs/ft_wordlength.c
 
 CFLAGS = -Wall -Wextra -Werror -I. -c
 
