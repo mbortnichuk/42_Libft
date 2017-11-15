@@ -6,7 +6,7 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/01 13:22:22 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/01 13:22:23 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/13 21:27:42 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 
 /* puts() writes a string to stdout up to but not including the null character */
 
-static int		main(void)
+int		main(void)
 {
+
+	/* PART 1 */
+
+
 	/*---------- ATOI TEST ----------*/
 	puts("----------------------------------------");
 	puts("|              ATOI TEST               |");
@@ -561,6 +565,124 @@ static int		main(void)
 	printf("%s%d\n", "My toupper: ", ft_toupper('a'));
 	printf("%s%d\n", "Original toupper: ", toupper('a'));
 	
+
+	/* PART 2 */
+
+	puts(" ");
+	puts(" ");
+	puts("------------------------------------------------------------");
+	puts("|  **********************  PART 2  **********************  |");
+	puts("------------------------------------------------------------");
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              STRNEW TEST            |");
+	puts("----------------------------------------");
+	printf("%s%s\n", "My strnew: ", ft_strnew(15));
+
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|         STREQU VS STRNEQU TEST       |");
+	puts("----------------------------------------");
+	char *str1d = "helloworld";
+	char *str2d = "helleworld";
+	printf("| Original strings \n| %s%s%s |\n", str1d, ", ", str1d);
+	//strequ, strnequ
+	printf("%s%d\n", "strequ: ", ft_strequ(str1d, str2d));
+	printf("%s%d\n", "strNequ: ", ft_strnequ(str1d, str2d, 6));
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              STRSUB TEST            |");
+	puts("----------------------------------------");
+	char *s1ds = "helloworldstackoverflow";
+	printf("| Original string: %s |\n", s1ds);
+	printf("%s%s\n", "strsub: ", ft_strsub(s1ds, 9, 2));
+	printf("%s%s\n", "strsub: ", ft_strsub(s1ds, 9, 10));
+	printf("%s%s\n", "strsub: ", ft_strsub(s1ds, 9, 0));
+
+
+	
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              STRJOIN TEST           |");
+	puts("----------------------------------------");
+	char *ss1fd = "hi";
+	char *ss2fd = "judy";
+	printf("| Original strings: %s%s%s |\n", ss1fd, ", ", ss2fd);
+	printf("%s%s\n", "strjoin: ", ft_strjoin(ss1fd, ss2fd));
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              STRTRIM TEST           |");
+	puts("----------------------------------------");
+	char *ss3a = " 		 hellow	";
+	printf("| Original string: %s |\n", ss3a);
+	printf("%s%s\n", "strtrim: ", ft_strtrim(ss3a));
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              STRSPLIT TEST           |");
+	puts("----------------------------------------");
+	/* throws SEGFAULT */
+	//	char *s = "      split       this for   me  !       ";
+	//char *f = "                  olol";
+	//	char *l = "olol                     ";
+	//	char *c = "";
+	//	char *d = "dima*maryana**hello*";
+	//char **r = ft_strsplit(f,' ');
+
+	// for(int i = 0; i <= 8; i++)
+	// 	for(int j = 0; j <= 8; j++)
+	// 		ft_putchar(r[i][j]);
+	// ft_putchar('\n');
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              ITOA TEST              |");
+	puts("----------------------------------------");
+	int ig = 123456;
+	printf("| Original number: %d |\n", ig);
+	printf("%s%s\n", "itoa: ", ft_itoa(ig));
+	printf("%s%s\n", "itoa: ", ft_itoa(ig));
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              WORDCOUNT TEST         |");
+	puts("----------------------------------------");
+	char *gg = "helo**gerry** *jello";
+	printf("| Original string: %s |\n", gg);
+	int nu = ft_wordcount(gg, '*');
+	printf("%s%d\n", "wordcount test: ", nu);
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              WORDLENGTH TEST        |");
+	puts("----------------------------------------");
+	char *gerr = "hello**gerry";
+	printf("| Original string: %s |\n", gerr);
+	int nmbr = ft_wordlength(gerr, '*');	
+	printf("%s%d\n", "wordlength test: ", nmbr);
+
+
+	puts(" ");
+	puts("----------------------------------------");
+	puts("|              NUMBERLENGTH TEST       |");
+	puts("----------------------------------------");
+	int is = 123456;
+	printf("| Original number: %d |\n", is);
+	printf("%s%d\n", "numberslength: ", ft_numberlength(is));
+
+
 
 	return (0);
 }
