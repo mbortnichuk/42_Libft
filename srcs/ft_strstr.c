@@ -10,31 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char *mainstr;
-	char *strtofind;
+	char	*src;
+	char	*find;
+	size_t	size;
 
-	if (*haystack == '\0' && *needle == '\0')
+	src = (char *)haystack;
+	find = (char *)needle;
+	size = ft_strlen(find);
+	if (size == 0)
+		return (src);
+	while (*src)
 	{
-		return ((char *)haystack);
+		if (ft_strncmp(src, find, size) == 0)
+			return (src);
+		src++;
 	}
-	while (*haystack)
-	{
-		mainstr = (char *)haystack;
-		strtofind = (char *)needle;
-		while ((*haystack) && (*strtofind) && (*haystack == *strtofind))
-		{
-			haystack++;
-			strtofind++;
-		}
-		if (*strtofind == '\0')
-		{
-			return (mainstr);
-		}
-		haystack = mainstr + 1;
-	}
-	return (0);
+	return ((char *)NULL);
 }

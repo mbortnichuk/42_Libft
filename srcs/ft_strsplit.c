@@ -10,32 +10,60 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static int		ft_wordcounter(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		w;
-	char	**string;
+	size_t	counter;
+	size_t	i;
 
-	if (!s || !(string = (char**)malloc(sizeof(*string) *
-					ft_wordcount(s, c) + 1)))
-		return (NULL);
-	j = 0;
 	i = 0;
-	while (i < ft_wordcount(s, c))
+	counter = 0;
+	while (i < ft_strlen(s))
 	{
-		w = 0;
-		if (!(string[i] = ft_strnew(ft_wordlength(&s[j], c) + 1)))
-			return (NULL);
-		while (s[j] == c)
-			j++;
-		while (s[j] != c && s[j])
-			string[i][w++] = s[j++];
-		string[i][w] = '\0';
+		if (i == 0 && s[i] != c)
+			counter++;
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			counter++;
 		i++;
 	}
-	string[i] = 0;
-	return (string);
+	return (counter);
+}
+
+static char		**ft_filling(char const *s, char c, char **tab)
+{
+	size_t		i;
+	size_t		start;
+	size_t		index;
+
+	index = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			i++;
+		else if (s[i] != c)
+		{
+			start = i;
+			while (s[i] && s[i] != c)
+				i++;
+			tab[index] = ft_strsub(s, start, i - start);
+			index++;
+			tab[index] = NULL;
+		}
+	}
+	tab[index] = 0;
+	return (tab);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**tab;
+
+	if (s == NULL)
+		return (NULL);
+	if (!(tab = (char**)malloc(sizeof(char*) * (ft_wordcounter(s, c) + 1))))
+		return (NULL);
+	ft_bzero(tab, (ft_wordcounter(s, c) + 1));
+	return (ft_filling(s, c, tab));
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_wordcount(char const *s, char c)
 {
@@ -19,20 +19,16 @@ int		ft_wordcount(char const *s, char c)
 
 	i = 0;
 	counter = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c)
-		{
 			i++;
-		}
 		if (s[i] != c && s[i] != '\0')
-		{
 			counter++;
-		}
 		while (s[i] != c && s[i] != '\0')
-		{
 			i++;
-		}
 	}
 	return (counter);
 }

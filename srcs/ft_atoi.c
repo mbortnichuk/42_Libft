@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static int		skip_blanks(char c)
 {
@@ -20,9 +20,9 @@ static int		skip_blanks(char c)
 
 int				ft_atoi(const char *str)
 {
-	long long	i;
-	long long	res;
-	int			neg;
+	int					i;
+	unsigned long int	res;
+	int					neg;
 
 	i = 0;
 	res = 0;

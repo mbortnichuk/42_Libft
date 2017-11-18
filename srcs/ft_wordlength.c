@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_wordlength(char const *s, char c)
 {
@@ -19,10 +19,10 @@ int		ft_wordlength(char const *s, char c)
 
 	i = 0;
 	length = 0;
+	if (!s)
+		return (0);
 	while (s[i] == c)
-	{
 		i++;
-	}
 	while (s[i] != c && s[i] != '\0')
 	{
 		length++;

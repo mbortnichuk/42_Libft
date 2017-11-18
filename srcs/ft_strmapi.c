@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*string;
 	int		i;
 
-	if (!s)
-	{
+	if (!s || !f)
 		return (NULL);
-	}
 	i = 0;
 	string = ft_strnew(ft_strlen(s));
 	if (string)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
@@ -20,8 +20,6 @@ void	ft_putstr_fd(char const *s, int fd)
 	if (s)
 	{
 		while (s[i])
-		{
 			write(fd, &s[i++], 1);
-		}
 	}
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static int	blanks(int n)
 {
@@ -21,23 +21,19 @@ static int	blanks(int n)
 
 char		*ft_strtrim(char const *s)
 {
-	int		start;
-	int		end;
-	char	*string;
+	unsigned int	i;
+	size_t			len;
+	char			*ret;
 
-	start = 0;
-	string = NULL;
 	if (!s)
 		return (NULL);
-	end = (ft_strlen(s)) - 1;
-	while (blanks(s[start]) == 1 && s[start] != '\0')
-		start++;
-	while (blanks(s[end]) == 1 && end > 0)
-		end--;
-	end++;
-	if (start >= end)
-		string = ft_strdup("\0");
-	else
-		string = ft_strsub(s, start, (end - start));
-	return (string);
+	i = 0;
+	while (blanks(s[i]))
+		i++;
+	len = ft_strlen(s) - 1;
+	while (len > i && blanks(s[len]))
+		len--;
+	if (len < i)
+		return (ret = ft_strdup("\0"));
+	return (ret = ft_strsub(s, i, len - (size_t)i + 1));
 }

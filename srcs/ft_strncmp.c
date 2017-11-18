@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -24,13 +24,9 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (n--)
 	{
 		if (p1[i] != p2[i])
-		{
 			return (p1[i] - p2[i]);
-		}
 		else if (!s1[i])
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (0);

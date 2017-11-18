@@ -6,21 +6,17 @@
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 17:56:16 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/01 15:17:43 by mbortnic         ###   ########.fr       */
+/*   Updated: 2017/11/13 20:54:06 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c && *s != '\0')
-	{
 		s++;
-	}
 	if (*s == (char)c)
-	{
 		return ((char *)s);
-	}
 	return (NULL);
 }

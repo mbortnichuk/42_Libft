@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -20,9 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (len >= 0)
 	{
 		if (s[len] == (char)c)
-		{
 			return (&(((char *)s)[len]));
-		}
 		len--;
 	}
 	return (NULL);

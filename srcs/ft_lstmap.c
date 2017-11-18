@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/27 15:42:09 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/13 20:53:37 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/11/12 16:12:39 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/16 13:48:18 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*arr;
-	size_t	i;
+	t_list *newl;
+	t_list *list;
 
-	arr = b;
-	i = 0;
-	while (i < len)
-		arr[i++] = (unsigned char)c;
-	return (b);
+	if (!lst || !f)
+		return (NULL);
+	list = f(lst);
+	newl = list;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (!(list->next = f(lst)))
+		{
+			free(list->next);
+			return (NULL);
+		}
+		list = list->next;
+	}
+	return (newl);
 }

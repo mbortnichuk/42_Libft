@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
 int		ft_numberlength(int n)
 {
 	int				i;
@@ -26,9 +24,7 @@ int		ft_numberlength(int n)
 		nb = -n;
 	}
 	else
-	{
 		nb = n;
-	}
 	while (nb != 0)
 	{
 		nb /= 10;
