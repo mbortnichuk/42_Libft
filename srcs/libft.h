@@ -88,5 +88,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_wordcount(char const *s, char c);
 int				ft_wordlength(char const *s, char c);
 int				ft_numberlength(int n);
+void			ft_swap(int *a, int *b);
+int				ft_list_size(t_list *beginning);
+unsigned char	ft_swap_bits(unsigned char octet);
+int				ft_sqrt(int nb);
 
 #endif
