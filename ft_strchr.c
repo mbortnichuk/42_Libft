@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/12 16:12:39 by mbortnic          #+#    #+#             */
-/*   Updated: 2017/11/13 16:24:34 by mbortnic         ###   ########.fr       */
+/*   Created: 2017/10/30 17:56:16 by mbortnic          #+#    #+#             */
+/*   Updated: 2017/11/13 20:54:06 by mbortnic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+char	*ft_strchr(const char *s, int c)
 {
-	t_list *list;
+	int i;
 
-	if (lst && f)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		list = (t_list *)malloc(sizeof(f(list)));
-		if (!list)
-			return (NULL);
-		list = f(lst);
-		list->next = ft_lstmap(lst->next, f);
-		return (list);
+		if (s[i] == (char)c)
+			return ((char*)&s[i]);
+		i++;
 	}
-	return (NULL);
+	if (c == 0)
+		return ((char*)&s[i]);
+	return (0);
 }

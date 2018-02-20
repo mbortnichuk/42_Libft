@@ -6,7 +6,7 @@
 #    By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/24 17:33:05 by mbortnic          #+#    #+#              #
-#    Updated: 2017/11/15 10:03:54 by mbortnic         ###   ########.fr        #
+#    Updated: 2017/11/20 12:02:39 by mbortnic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,14 @@ SRCS = ft_atoi.c \
 	   ft_lstmap.c \
 	   ft_numberlength.c \
 	   ft_wordcount.c \
-	   ft_wordlength.c
+	   ft_wordlength.c \
+	   ft_swap.c \
+	   ft_list_size.c \
+	   ft_swap_bits.c \
+	   ft_sqrt.c \
+	   get_next_line.c
+
+BINS = $(SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror -I. -c
 
@@ -82,13 +89,19 @@ all: $(NAME)
 
 $(NAME): 
 	@ gcc $(SRCS) $(CFLAGS)
-	@ ar rc $(NAME) *.o
+	@ ar rc $(NAME) $(BINS)
 	@ ranlib $(NAME)
+	@ echo "\033[32;1mlibft is ready\033[0m"
 
 clean:
-	@ rm -f *.o
+	@ rm -f $(BINS)
+	@ echo "\033[33;1mbinary files are removed\033[0m"
 
 fclean: clean
 	@ rm -f $(NAME)
+	@ echo "\033[31;m$(NAME) is deleted\033[0m"
 
 re: fclean all
+	@ echo "\033[36;1mre performed\033[0m"
+
+.PHONY: all clean fclean re

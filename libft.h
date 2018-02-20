@@ -16,6 +16,16 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+# define ERROR -1
+# define END 0
+# define LINE 1
+
+# define BUFF_SIZE 8
+# define FDS 4864
+
+# define CHECK(x) if (!x) return (0);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -88,5 +98,11 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_wordcount(char const *s, char c);
 int				ft_wordlength(char const *s, char c);
 int				ft_numberlength(int n);
+void			ft_swap(int *a, int *b);
+int				ft_list_size(t_list *beginning);
+unsigned char	ft_swap_bits(unsigned char octet);
+int				ft_sqrt(int nb);
+
+int				get_next_line(const int fd, char **line);
 
 #endif
